@@ -1,0 +1,256 @@
+.container--mission {
+  max-width: 1200px;
+}
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+  gap: 40px;
+}
+
+.mission-header__left {
+  flex: 1;
+}
+
+.mission-header__subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--cinza-500);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.mission-header__title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--azul-900);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.mission-header__right {
+  flex: 0 0 40%;
+}
+
+.mission-header__right p {
+  font-size: 1.1rem;
+  color: var(--cinza-600);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.mission-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 24px;
+}
+
+.m-card--partners {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 32px;
+  gap: 20px;
+}
+
+.m-card__avatars {
+  display: flex;
+  align-items: center;
+}
+
+.m-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--branco);
+  background: var(--cinza-100);
+  object-fit: cover;
+  margin-left: -14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.m-card__avatar:first-child { margin-left: 0; }
+
+.m-card__avatar--more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--azul-50);
+  color: var(--azul-800);
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.m-card__partners-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cinza-500);
+  letter-spacing: 0.5px;
+}
+
+.m-card--clinical {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.m-card--research {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.m-card--status {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 32px;
+  gap: 16px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #a3e635;
+  box-shadow: 0 0 12px rgba(163, 230, 53, 0.6);
+  flex-shrink: 0;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cinza-500);
+  letter-spacing: 0.5px;
+}
+
+.m-card--training {
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+  background: var(--azul-900);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+}
+
+.m-card--training:hover {
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.m-card__training-content {
+  position: relative;
+  z-index: 2;
+}
+
+.m-card__bg-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+}
+
+.m-card__rating {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 120px;
+}
+
+.m-card__rating-num {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--branco);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.m-card__rating-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+.mission__extra--visible {
+  max-height: 400px;
+  opacity: 1;
+  padding: 32px 0 0;
+}
+
+.mission__extra p {
+  font-size: 1rem;
+  color: var(--cinza-600);
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .mission-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .m-card--partners { grid-column: 1 / -1; grid-row: auto; }
+  .m-card--clinical { grid-column: 1 / 2; grid-row: auto; }
+  .m-card--research { grid-column: 2 / 3; grid-row: auto; }
+  .m-card--status { grid-column: 1 / -1; grid-row: auto; }
+  .m-card--training { grid-column: 1 / -1; grid-row: auto; height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .mission-bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .mission-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .m-card {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+  .m-card--training {
+    height: 400px;
+  }
+
+  .m-card__title {
+    font-size: 1.15rem;
+  }
+
+  .m-card__text {
+    font-size: 0.95rem;
+  }
+
+  .m-card__big-number {
+    font-size: 3rem;
+  }
+
+  .m-card__big-number--alt {
+    font-size: 2.5rem;
+  }
+}
