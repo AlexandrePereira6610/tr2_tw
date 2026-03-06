@@ -1,213 +1,878 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centro Académico Clínico dos Açores</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description"
+    content="Centro Académico Clínico dos Açores — Investigação, Ensino e Inovação ao serviço da saúde açoriana.">
+  <meta name="keywords" content="CACA, Centro Académico Clínico, Açores, Investigação, Saúde, Universidade dos Açores">
+  <meta name="author" content="Grupo 11 — Universidade dos Açores">
+
+  <meta property="og:title" content="CACA — Centro Académico Clínico dos Açores">
+  <meta property="og:description" content="Investigação, Ensino e Inovação ao serviço da saúde açoriana.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/logos/CACA_full.png">
+  <meta property="og:locale" content="pt_PT">
+
+  <title>CACA — Centro Académico Clínico dos Açores</title>
+  <link rel="icon" type="image/png" href="img/logos/CACA_full.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header class="topo-h">
-  <div class="header-left">
-    <!-- LOGO -->
-    <div class="header--">
-      <img src="img/CACA_full.png" alt="Centro Académico Clínico dos Açores" class="logo-header">
+  <a href="#main-content" class="skip-to-content">Saltar para o conteúdo principal</a>
+
+  <div class="loading-overlay" id="loading-overlay" aria-hidden="true">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <header class="header" id="header" role="banner">
+    <div class="header__container">
+      <a href="#" class="header__logo" aria-label="Página inicial do CACA">
+        <img src="img/logos/CACA_full.png" alt="Logótipo do Centro Académico Clínico dos Açores"
+          class="header__logo-img">
+      </a>
+
+      <nav class="header__nav" id="main-nav" role="navigation" aria-label="Navegação principal">
+        <a href="#missao" class="header__nav-link">Missão</a>
+        <a href="#investigacao" class="header__nav-link">Investigação</a>
+        <a href="#equipa" class="header__nav-link">Equipa</a>
+        <a href="#parceiros" class="header__nav-link">Parceiros</a>
+        <a href="#oportunidades" class="header__nav-link">Oportunidades</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#contactos" class="btn btn--contact">Contactos</a>
+      </div>
+
+      <button class="header__hamburger" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false"
+        aria-controls="main-nav">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </button>
     </div>
+  </header>
 
-    <!-- MENU - IMEDIATAMENTE A SEGUIR AO LOGO -->
-    <nav class="menu">
-      <a href="#missao">Missão</a>
-      <a href="#investigacao">Investigação</a>
-      <a href="#parceiros">Parceiros</a>
-      <a href="#oportunidades">Oportunidades</a>
-      <a href="#contactos">Contactos</a>
-    </nav>
-  </div>
+  <main role="main" id="main-content">
 
-  <!-- ÍCONES FICTÍCIOS -->
-  <div class="header-t">
-    <span class="icon" aria-label="Idioma">🌐</span>
-    <span class="icon" aria-label="Pesquisar">🔍</span>
-  </div>
-</header>
+    <section class="hero" id="hero" aria-label="Secção principal">
+      <div class="hero__container">
+        <div class="hero__badge" data-animate="fade-up">
+          <span class="hero__badge-emoji">⚕️</span>
+          <span class="hero__badge-text">Investigação de Excelência &rarr;</span>
+          <span class="hero__badge-emoji">🔬</span>
+        </div>
 
-<!-- HERO SECTION -  COM A IMAGEM A SERVIR DE FUNDO PARA TODO O CONTEÚDO -->
-<section class="hero">
-  <div class="carousel">
-    <img src="img/caption.png" class="carousel-slide active" alt="Hero 1">
-    <img src="img/caption2.jpg" class="carousel-slide" alt="Hero 2">
-    <img src="img/caption3.jpg" class="carousel-slide" alt="Hero 3">
-  </div>
-  <div class="carousel-progress">
-    <div class="carousel-progress-bar"></div>
-  </div>
-  <div class="hero-overlay">
-    <div class="container hero-content">
-      <h1 class="hero-titulo">Centro Académico Clínico dos Açores</h1>
-      <p class="hero-subtitulo">Investigação, Ensino e Inovação ao serviço da saúde açoriana</p>
-    </div>
-  </div>
-</section>
-
-<!-- MISSAO -->
-<section class="secao" id="missao">
-  <div class="container">
-    <h2>A Nossa Missão</h2>
-    
-    <div class="missao-conteudo">
-      <p class="missao-texto">
-        O <strong>Centro Académico Clínico dos Açores (CACA)</strong> tem como missão integrar unidades de saúde, ensino superior e investigação científica, promovendo a melhoria contínua da qualidade dos cuidados de saúde prestados à população açoriana.
-      </p>
-      
-      <p class="missao-texto">
-        O CACA aposta na aplicação da evidência científica, no desenvolvimento de investigação clínica e de translação, na inovação dos cuidados de saúde e na formação de profissionais altamente qualificados, com especial enfoque nos domínios críticos e nas doenças com maior incidência na região.
-      </p>
-      
-      <p class="missao-texto">
-        Através da articulação entre a Universidade dos Açores e o Serviço Regional de Saúde, o CACA posiciona-se como uma estrutura fundamental para o desenvolvimento da investigação clínica no arquipélago, criando pontes entre o conhecimento académico e a prática clínica diária.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- INVESTIGACAO - COM FLEXBOX (NÃO FLEX-WRAP) -->
-<section class="secao secao-investi" id="investigacao">
-  <div class="container">
-    <h2>Áreas de Investigação</h2>
-    
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>e-Saúde</h3>
-        <p class="text-justify">
-          Desenvolvimento e aplicação de soluções digitais para melhorar o acesso, a eficiência e a qualidade dos cuidados de saúde na Região Autónoma dos Açores, superando as barreiras da insularidade.
+        <h1 class="hero__title" id="hero-title" data-animate="fade-up">Excelência em Saúde, Inovação e Investigação!
+        </h1>
+        <p class="hero__subtitle" id="hero-subtitle" data-animate="fade-up">Mergulhe na melhor experiência de ciência
+          clínica com o Centro Académico Clínico dos Açores! Especializamo-nos em criar soluções vitais para a região.
         </p>
-      </div>
 
-      <div class="flex-item">
-        <h3>Inteligência Artificial em Saúde</h3>
-        <p class="text-justify">
-          Investigação e implementação de sistemas baseados em inteligência artificial para apoio ao diagnóstico, à decisão clínica e à gestão dos cuidados de saúde, com modelos adaptados à realidade regional.
+        <div class="hero__cta-group" data-animate="fade-up">
+          <a href="#missao" class="hero__btn" id="hero-cta">Começar Agora &rarr;</a>
+          <p class="hero__cta-note">🍁 Apoiando o progresso científico na saúde a qualquer momento.</p>
+        </div>
+
+        <div class="hero__logos" data-animate="fade-up">
+          <img src="img/logos/logo_UAc.png" alt="UAc" class="hero__logo-img">
+          <img src="img/logos/açor.PNG" alt="Governo dos Açores" class="hero__logo-img">
+          <img src="img/logos/HDES.png" alt="HDES" class="hero__logo-img">
+          <span class="hero__logo-text">Investigação</span>
+          <span class="hero__logo-text">Saúde</span>
+          <span class="hero__logo-text">UAc / FCT</span>
+        </div>
+
+        <div class="hero__gallery" data-animate="fade-up">
+          <div class="hero__gallery-item hero__gallery-item--1">
+            <img src="img/hero/gallery_lab.png" alt="Laboratório Moderno CACA">
+          </div>
+          <div class="hero__gallery-item hero__gallery-item--2">
+            <img src="img/hero/gallery_doctors.png" alt="Investigação em Saúde">
+          </div>
+          <div class="hero__gallery-item hero__gallery-item--3">
+            <img src="img/hero/gallery_tech.png" alt="E-Saúde Inovação">
+          </div>
+          <div class="hero__gallery-item hero__gallery-item--4">
+            <img src="img/hero/gallery_tube.png" alt="Investigação Científica CACA">
+          </div>
+          <div class="hero__gallery-item hero__gallery-item--5">
+            <img src="img/hero/gallery_care.png" alt="Cuidado ao Doente">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Estatísticas do CACA">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item">
+            <span class="stats__number" data-count="120" data-suffix="+">0</span>
+            <span class="stats__label">Investigadores</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number" data-count="26">0</span>
+            <span class="stats__label">Projetos Ativos</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number" data-count="6">0</span>
+            <span class="stats__label">Áreas de Investigação</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number" data-count="3">0</span>
+            <span class="stats__label">Parceiros Institucionais</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="missao" aria-labelledby="missao-titulo">
+      <div class="container container--mission">
+        <div class="mission-header" data-animate="fade-up">
+          <div class="mission-header__left">
+            <span class="mission-header__subtitle">A Nossa Missão</span>
+            <h2 class="mission-header__title" id="missao-titulo">Inovação e<br>Saúde Clínica</h2>
+          </div>
+          <div class="mission-header__right">
+            <p>Promovemos a melhoria contínua da qualidade dos cuidados de saúde prestados à população açoriana, aliando
+              investigação científica e ensino superior num formato inovador.</p>
+          </div>
+        </div>
+
+        <div class="mission-bento">
+          <div class="m-card m-card--partners" data-animate="fade-up">
+            <div class="m-card__avatars">
+              <img src="img/team/team_maria.png" alt="Profissional CACA" class="m-card__avatar">
+              <img src="img/team/team_joao.png" alt="Profissional CACA" class="m-card__avatar">
+              <img src="img/team/team_ana.png" alt="Profissional CACA" class="m-card__avatar">
+              <div class="m-card__avatar m-card__avatar--more">+100</div>
+            </div>
+            <span class="m-card__partners-text">Profissionais em Rede</span>
+          </div>
+
+          <div class="m-card m-card--clinical" data-animate="fade-up">
+            <h3 class="m-card__title">Excelência Clínica</h3>
+            <p class="m-card__text">Melhoria contínua na integração com as unidades de saúde, ensino superior e ciência.
+            </p>
+            <div class="m-card__big-number">100%</div>
+            <span class="m-card__number-label">Foco no Doente Açoriano</span>
+          </div>
+
+          <div class="m-card m-card--research" data-animate="fade-up">
+            <h3 class="m-card__title">Translacional</h3>
+            <p class="m-card__text">Pela aplicação da evidência científica com enfoque nas doenças de maior incidência
+              no arquipélago.</p>
+            <div class="m-card__big-number m-card__big-number--alt">26+</div>
+            <span class="m-card__number-label">Projetos Ativos Simultâneos</span>
+          </div>
+
+          <div class="m-card m-card--status" data-animate="fade-up">
+            <span class="status-dot"></span>
+            <span class="status-text">Cobertura Ativa — 2026</span>
+          </div>
+
+          <div class="m-card m-card--training" data-animate="fade-up">
+            <div class="m-card__training-content">
+              <h3 class="m-card__title m-card__title--light">Formação Avançada</h3>
+              <p class="m-card__text m-card__text--light">Articulamos a UAc e o Serviço Regional de Saúde, criando
+                pontes decisivas entre o conhecimento académico profundo e a prática diária de sucesso nos cuidados de
+                saúde globais.</p>
+            </div>
+
+            <svg class="m-card__bg-shape" viewBox="0 0 400 300" preserveAspectRatio="none">
+              <path d="M0,150 C100,200 200,50 400,100 L400,300 L0,300 Z" fill="rgba(255,255,255,0.05)" />
+              <path d="M0,180 C150,220 250,80 400,140 L400,300 L0,300 Z" fill="rgba(255,255,255,0.08)" />
+              <polyline points="0,150 100,50 150,120 250,40 300,180 400,90" fill="none" stroke="rgba(255,255,255,0.15)"
+                stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <div class="m-card__rating">
+              <span class="m-card__rating-num">10</span>
+              <span class="m-card__rating-label">Anos de Inovação<br>e Progresso Constante</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="investigacao" aria-labelledby="investigacao-titulo">
+      <div class="container">
+        <h2 class="section__title" id="investigacao-titulo">Áreas de Investigação</h2>
+
+        <div class="research">
+          <div class="research__card">
+            <div class="research__icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div class="research__content">
+              <h3 class="research__card-title">e-Saúde</h3>
+              <p class="research__card-text">Soluções digitais para melhorar o acesso e eficiência dos cuidados de
+                saúde, superando barreiras.</p>
+              <div class="research__metrics">
+                <span><strong>12</strong> Projetos</span>
+                <span><strong>34</strong> Inv.</span>
+              </div>
+            </div>
+          </div>
+          <div class="research__card">
+            <div class="research__icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <div class="research__content">
+              <h3 class="research__card-title">Inteligência Artificial</h3>
+              <p class="research__card-text">Sistemas baseados em IA para apoio ao diagnóstico e à decisão na saúde.</p>
+              <div class="research__metrics">
+                <span><strong>8</strong> Projetos</span>
+                <span><strong>21</strong> Inv.</span>
+              </div>
+            </div>
+          </div>
+          <div class="research__card">
+            <div class="research__icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+            </div>
+            <div class="research__content">
+              <h3 class="research__card-title">Telemedicina</h3>
+              <p class="research__card-text">Modelos de prestação à distância, reforçando acesso a serviços
+                especializados.</p>
+              <div class="research__metrics">
+                <span><strong>6</strong> Projetos</span>
+                <span><strong>18</strong> Inv.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-wrapper" data-animate="fade-up">
+          <h3 class="chart-wrapper__title">Projetos por Área de Investigação</h3>
+          <p class="chart-wrapper__subtitle">Distribuição de projetos ativos no CACA em 2025/2026</p>
+          <div class="chart" id="d3-chart" role="img"
+            aria-label="Gráfico de barras com o número de projetos por área de investigação do CACA"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="equipa" aria-labelledby="equipa-titulo">
+      <div class="container">
+        <h2 class="section__title" id="equipa-titulo">A Nossa Equipa</h2>
+        <p class="section__description" data-animate="fade-up">Conheça os profissionais que impulsionam a investigação e
+          a inovação no CACA.</p>
+        <div class="team" data-animate="fade-up">
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_maria.png" alt="Prof.ª Dr.ª Maria Santos" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Prof.ª Dr.ª Maria Santos</h3>
+              <p class="team__role">Diretora do CACA</p>
+              <p class="team__bio">Doutorada em Medicina. Especialista em saúde pública e gestão de sistemas.</p>
+              <span class="team__area">Gestão e Saúde Pública</span>
+            </div>
+          </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_joao.png" alt="Prof. Dr. João Ferreira" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Prof. Dr. João Ferreira</h3>
+              <p class="team__role">Coordenador de Investigação</p>
+              <p class="team__bio">20 anos de experiência em investigação clínica e translacional.</p>
+              <span class="team__area">Investigação Clínica</span>
+            </div>
+          </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_ana.png" alt="Dr.ª Ana Oliveira" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Dr.ª Ana Oliveira</h3>
+              <p class="team__role">Responsável de e-Saúde</p>
+              <p class="team__bio">Engenheira biomédica com foco em soluções digitais e monitorização remota.</p>
+              <span class="team__area">e-Saúde Inovação</span>
+            </div>
+          </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_pedro.png" alt="Dr. Pedro Almeida" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Dr. Pedro Almeida</h3>
+              <p class="team__role">Investigador em IA</p>
+              <p class="team__bio">Doutorado em Ciência de Dados. Apoio ao diagnóstico e decisão clínica.</p>
+              <span class="team__area">Inteligência Artificial</span>
+            </div>
+          </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_catarina.png" alt="Prof.ª Dr.ª Catarina Costa" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Prof.ª Dr.ª Catarina Costa</h3>
+              <p class="team__role">Coordenadora Telemedicina</p>
+              <p class="team__bio">Pioneira em programas de telemedicina nos Açores com ilhas remotas.</p>
+              <span class="team__area">Telemedicina</span>
+            </div>
+          </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_miguel.png" alt="Dr. Miguel Sousa" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Dr. Miguel Sousa</h3>
+              <p class="team__role">Investigador</p>
+              <p class="team__bio">Especialista em epidemiologia regional, prevalência de doenças.</p>
+              <span class="team__area">Epidemiologia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="parceiros" aria-labelledby="parceiros-titulo">
+      <div class="container">
+        <h2 class="section__title" id="parceiros-titulo">Parceiros Institucionais</h2>
+        <p class="section__description" data-animate="fade-up">O CACA desenvolve a sua atividade em estreita colaboração
+          com as principais instituições de ensino, saúde e governo regional dos Açores.</p>
+        <div class="partners" data-animate="fade-up">
+          <div class="partners__item">
+            <img src="img/logos/logo_UAc.png" alt="Universidade dos Açores — Parceiro fundador" class="partners__logo"
+              loading="lazy">
+            <span class="partners__name">Universidade dos Açores</span>
+          </div>
+          <div class="partners__item">
+            <img src="img/logos/açor.PNG" alt="Governo dos Açores — Secretaria Regional da Saúde" class="partners__logo"
+              loading="lazy">
+            <span class="partners__name">Governo dos Açores</span>
+          </div>
+          <div class="partners__item">
+            <img src="img/logos/HDES.png" alt="Hospital do Divino Espírito Santo — Hospital de referência"
+              class="partners__logo" loading="lazy">
+            <span class="partners__name">HDES</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testemunhos" aria-labelledby="testemunhos-titulo">
+      <div class="container">
+        <h2 class="section__title" id="testemunhos-titulo">O Que Dizem Sobre Nós</h2>
+        <div class="testimonials" data-animate="fade-up">
+          <div class="testimonials__track" id="testimonials-track">
+            <blockquote class="testimonials__item testimonials__item--active">
+              <svg class="testimonials__quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"
+                aria-hidden="true">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+              </svg>
+              <p class="testimonials__text">O CACA transformou a forma como fazemos investigação nos Açores. A
+                colaboração entre a universidade e o hospital permitiu-nos aceder a recursos e conhecimentos antes
+                inalcançáveis.</p>
+              <footer class="testimonials__author">
+                <span class="testimonials__author-name">Dr.ª Mariana Furtado</span>
+                <span class="testimonials__author-role">Investigadora em Biomedicina, UAc</span>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonials__item">
+              <svg class="testimonials__quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"
+                aria-hidden="true">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+              </svg>
+              <p class="testimonials__text">O estágio no CACA foi a experiência mais enriquecedora do meu percurso
+                académico. Trabalhei diretamente com equipas de investigação e contribuí para projetos com impacto real
+                na saúde da região.</p>
+              <footer class="testimonials__author">
+                <span class="testimonials__author-name">Ricardo Medeiros</span>
+                <span class="testimonials__author-role">Estudante de Informática, UAc</span>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonials__item">
+              <svg class="testimonials__quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"
+                aria-hidden="true">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+              </svg>
+              <p class="testimonials__text">A parceria com o CACA permitiu ao HDES implementar soluções de telemedicina
+                que hoje servem centenas de doentes nas ilhas mais remotas do arquipélago.</p>
+              <footer class="testimonials__author">
+                <span class="testimonials__author-name">Dr. António Rebelo</span>
+                <span class="testimonials__author-role">Diretor Clínico, HDES</span>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="testimonials__nav" role="tablist" aria-label="Navegar testemunhos">
+            <button class="testimonials__dot testimonials__dot--active" data-index="0" role="tab" aria-selected="true"
+              aria-label="Testemunho 1"></button>
+            <button class="testimonials__dot" data-index="1" role="tab" aria-selected="false"
+              aria-label="Testemunho 2"></button>
+            <button class="testimonials__dot" data-index="2" role="tab" aria-selected="false"
+              aria-label="Testemunho 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="oportunidades" aria-labelledby="oportunidades-titulo">
+      <div class="container">
+        <h2 class="section__title" id="oportunidades-titulo">Oportunidades</h2>
+        <p class="section__description" data-animate="fade-up">O Centro Académico Clínico dos Açores disponibiliza
+          regularmente oportunidades para estudantes e investigadores nas suas iniciativas científicas e tecnológicas.
         </p>
-      </div>
 
-      <div class="flex-item">
-        <h3>Telemedicina</h3>
-        <p class="text-justify">
-          Promoção de modelos de prestação de cuidados à distância, reduzindo barreiras geográficas entre as ilhas e reforçando a equidade no acesso aos serviços de saúde especializados.
+        <div class="opportunities" data-animate="fade-up">
+          <a href="#" class="opportunities__card" id="oportunidade-estagios">
+            <div class="opportunities__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+            </div>
+            <div class="opportunities__content">
+              <h3 class="opportunities__title">Estágios e Projetos</h3>
+              <p class="opportunities__text">Oportunidades para estudantes integrarem equipas de investigação ativas.
+              </p>
+            </div>
+            <svg class="opportunities__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a href="#" class="opportunities__card" id="oportunidade-projetos">
+            <div class="opportunities__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <div class="opportunities__content">
+              <h3 class="opportunities__title">Projetos de Investigação</h3>
+              <p class="opportunities__text">Iniciativas inovadoras em áreas estratégicas da saúde açoriana.</p>
+            </div>
+            <svg class="opportunities__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a href="#" class="opportunities__card" id="oportunidade-bolsas">
+            <div class="opportunities__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 12 3 12 0v-5" />
+              </svg>
+            </div>
+            <div class="opportunities__content">
+              <h3 class="opportunities__title">Bolsas de Investigação</h3>
+              <p class="opportunities__text">Apoio financeiro a teses e trabalhos de investigação de excelência.</p>
+            </div>
+            <svg class="opportunities__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="noticias" aria-labelledby="noticias-titulo">
+      <div class="container">
+        <h2 class="section__title" id="noticias-titulo">Notícias e Eventos</h2>
+        <p class="section__description" data-animate="fade-up">Acompanhe as últimas novidades, publicações e eventos do
+          Centro Académico Clínico dos Açores.</p>
+        <div class="news" data-animate="fade-up">
+          <article class="news__card">
+            <div class="news__image-wrapper">
+              <img src="img/news/news_conf.png" alt="Conferência" class="news__image" loading="lazy">
+            </div>
+            <div class="news__content-wrapper">
+              <div class="news__date">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <span>12 de Fevereiro, 2026</span>
+              </div>
+              <div class="news__content">
+                <span class="news__tag news__tag--evento">Evento</span>
+                <h3 class="news__title">Conferência Internacional de e-Saúde nos Açores</h3>
+                <p class="news__excerpt">O CACA organiza a 3.ª edição da conferência que reúne especialistas
+                  internacionais em saúde digital e telemedicina.</p>
+              </div>
+            </div>
+          </article>
+          <article class="news__card">
+            <div class="news__image-wrapper">
+              <img src="img/news/news_lab.png" alt="Laboratório" class="news__image" loading="lazy">
+            </div>
+            <div class="news__content-wrapper">
+              <div class="news__date">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <span>28 de Janeiro, 2026</span>
+              </div>
+              <div class="news__content">
+                <span class="news__tag news__tag--noticia">Notícia</span>
+                <h3 class="news__title">CACA inaugura novo laboratório de simulação clínica</h3>
+                <p class="news__excerpt">O novo espaço permitirá a formação prática de estudantes e profissionais com
+                  equipamento de última geração.</p>
+              </div>
+            </div>
+          </article>
+          <article class="news__card">
+            <div class="news__image-wrapper">
+              <img src="img/news/news_telemed.png" alt="Telemedicina" class="news__image" loading="lazy">
+            </div>
+            <div class="news__content-wrapper">
+              <div class="news__date">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <span>15 de Janeiro, 2026</span>
+              </div>
+              <div class="news__content">
+                <span class="news__tag news__tag--publicacao">Publicação</span>
+                <h3 class="news__title">Parceria europeia para projeto de telemedicina inter-ilhas</h3>
+                <p class="news__excerpt">Novo protocolo com hospital europeu visa expandir a rede de telemedicina para
+                  todas as ilhas do arquipélago.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-titulo">
+      <div class="container">
+        <h2 class="section__title" id="faq-titulo">Perguntas Frequentes</h2>
+        <p class="section__description" data-animate="fade-up">Respostas às dúvidas mais comuns sobre o CACA e as suas
+          atividades.</p>
+        <div class="faq" data-animate="fade-up">
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>O que é o Centro Académico Clínico dos Açores?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>O CACA é uma plataforma integrada que articula a Universidade dos Açores, o Hospital do Divino Espírito
+                Santo e o Governo Regional, com o objetivo de promover a investigação clínica, o ensino médico e a
+                inovação em saúde na região.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>Como posso candidatar-me a um projeto de investigação?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>As candidaturas são abertas periodicamente e divulgadas na secção de Oportunidades. Pode também
+                contactar-nos diretamente através do formulário de contacto ou enviar o seu CV e carta de motivação para
+                o e-mail do CACA.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>Quais são as áreas de investigação prioritárias?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>As nossas áreas prioritárias incluem e-Saúde, Inteligência Artificial aplicada à saúde, Telemedicina,
+                Biotecnologia, Epidemiologia e Genómica, com especial enfoque nas doenças com maior incidência na região
+                dos Açores.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>O CACA aceita estudantes de outras universidades?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>Sim. Embora o CACA seja uma parceria centrada na Universidade dos Açores, aceitamos candidaturas de
+                estudantes e investigadores de outras instituições nacionais e internacionais, especialmente para
+                projetos colaborativos.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>As atividades do CACA são abertas ao público?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq__answer" aria-hidden="true">
+              <p>Algumas atividades, como conferências, seminários e workshops, são abertas à comunidade. Consulte a
+                secção de Notícias e Eventos para se manter atualizado sobre as próximas iniciativas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--newsletter" id="newsletter" aria-labelledby="newsletter-titulo">
+      <div class="newsletter-hero" data-animate="fade-up">
+        <img src="img/news/newsletter_team.png" alt="Equipa CACA" class="newsletter-hero__img">
+      </div>
+      <div class="container newsletter-content">
+        <h2 class="section__title section__title--newsletter" id="newsletter-titulo" data-animate="fade-up">Subscreva a
+          Nossa Newsletter</h2>
+        <p class="section__description section__description--newsletter" data-animate="fade-up">Bem-vindo ao nosso
+          centro de novidades, onde trazemos-lhe as últimas atualizações, conteúdos exclusivos e os bastidores do CACA.
         </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PARCEIROS -->
-<section class="secao" id="parceiros">
-  <div class="container">
-    <h2>Parceiros Institucionais</h2>
-    
-    <p class="descricao-parceiros">
-      O CACA desenvolve a sua atividade em estreita colaboração com as principais instituições de ensino, saúde e governo regional dos Açores.
-    </p>
-
-    <div class="logos">
-      <img src="img/logo_UAc.png" alt="Universidade dos Açores - Parceiro fundador">
-      <img src="img/açor.PNG" alt="Governo dos Açores - Secretaria Regional da Saúde">
-      <img src="img/HDES.png" alt="Hospital do Divino Espírito Santo - Hospital de referência">
-    </div>
-  </div>
-</section>
-
-<!-- OPORTUNIDADES -->
-<section class="secao" id="oportunidades">
-  <div class="container">
-    <h2>Oportunidades</h2>
-    
-    <p class="descricao-oportunidades">
-      O Centro Académico Clínico dos Açores disponibiliza regularmente oportunidades para estudantes e investigadores nas suas iniciativas científicas e tecnológicas.
-    </p>
-
-    <div class="oportunidades-lista">
-      <a href="#" class="oportunidade-link" onclick="alert('Página em construção. Brevemente disponível.'); return false;">🔬 Estágios e projetos para estudantes</a>
-      <a href="#" class="oportunidade-link" onclick="alert('Página em construção. Brevemente disponível.'); return false;">💡 Projetos de investigação inovadores</a>
-      <a href="#" class="oportunidade-link" onclick="alert('Página em construção. Brevemente disponível.'); return false;">🎓 Bolsas de investigação e apoio a teses</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTOS -->
-<section class="secao" id="contactos">
-  <div class="container">
-    <h2>Contactos</h2>
-    
-    <div class="contactos-grid">
-      <!-- Informação de contacto com ícones -->
-      <div class="contacto-info">
-        <div class="contacto-item">
-          <span class="contacto-icone">✉️</span>
-          <div class="contacto-detalhe">
-            <strong>E-mail:</strong> <a href="mailto:caca@uac.pt">caca@uac.pt</a>
+        <form class="newsletter-new-form" id="newsletter-form" novalidate data-animate="fade-up"
+          aria-label="Formulário de inscrição na newsletter">
+          <div class="newsletter-new-form__inner">
+            <input type="email" id="newsletter-email" name="email" class="newsletter-new-form__input"
+              placeholder="nome@email.pt" required aria-required="true">
+            <button type="submit" class="btn btn--primary btn--pill" id="newsletter-submit">
+              <span>Subscrever Agora &rarr;</span>
+            </button>
           </div>
-        </div>
-        
-        <div class="contacto-item">
-          <span class="contacto-icone">📞</span>
-          <div class="contacto-detalhe">
-            <strong>Telefone:</strong> 296 144 211
-          </div>
-        </div>
-        
-        <div class="contacto-item">
-          <span class="contacto-icone">📍</span>
-          <div class="contacto-detalhe">
-            <strong>Morada:</strong><br>
-            Rua da Mãe de Deus, 9500-321<br>
-            Ponta Delgada, Ilha de São Miguel<br>
-            Açores, Portugal
-          </div>
-        </div>
-        
-        <div class="contacto-item">
-          <span class="contacto-icone">🕒</span>
-          <div class="contacto-detalhe">
-            <strong>Horário:</strong><br>
-            Segunda a Sexta, 9h00 - 18h00
-          </div>
-        </div>
-      </div>
-
-      <!-- Formulário de contacto -->
-      <div class="contacto-form">
-        <h3>Envie-nos uma mensagem</h3>
-        <form>
-          <input type="text" placeholder="O seu nome completo" required>
-          <input type="email" placeholder="O seu e-mail" required>
-          <textarea placeholder="A sua mensagem" rows="4" required></textarea>
-          <button type="submit" class="btn-enviar">Enviar Mensagem →</button>
+          <span class="form-group__error form-group__error--newsletter" id="newsletter-email-error" role="alert"
+            aria-live="polite"></span>
         </form>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-info">
-        <p>© 2026 Centro Académico Clínico dos Açores</p>
-        <p>Universidade dos Açores – Licenciatura em Informática</p>
-        <p>Projeto TE1 | 2025/2026</p>
+        <p class="newsletter-disclaimer" data-animate="fade-up">"A sua informação nunca será partilhada com terceiros, e
+          poderá cancelar a subscrição a qualquer momento."</p>
+
+        <div class="newsletter-form__success" id="newsletter-success" role="alert" aria-live="polite" hidden>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          <h3>Inscrição Confirmada!</h3>
+          <p>Obrigado por subscrever a newsletter do CACA. Em breve receberá as últimas novidades diretamente no seu
+            e-mail.</p>
+        </div>
       </div>
-      
-      <div class="footer-links">
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Acessibilidade</a>
-        <a href="#">Termos e Condições</a>
+    </section>
+
+    <section class="section" id="contactos" aria-labelledby="contactos-titulo">
+      <div class="container container--contact-new">
+        <div class="contact-header-new">
+          <h2 class="contact-title-new" id="contactos-titulo" data-animate="fade-up">Contactar a equipa</h2>
+          <p class="contact-subtitle-new" data-animate="fade-up">Dúvidas sobre o projeto ou a clínica? Estamos aqui para
+            ajudar. Fale com a equipa 24/7 e junte-se a nós em poucos minutos.</p>
+        </div>
+
+        <div class="contact-layout-new">
+          <div class="contact-form-col" data-animate="fade-right">
+            <form class="c-form" id="contact-form" novalidate aria-label="Formulário de contacto">
+
+              <div class="c-form__row">
+                <div class="c-form__group">
+                  <label for="c-fname">Primeiro nome</label>
+                  <input type="text" id="c-fname" name="fname" placeholder="Primeiro nome" required
+                    aria-required="true">
+                </div>
+                <div class="c-form__group">
+                  <label for="c-lname">Último nome</label>
+                  <input type="text" id="c-lname" name="lname" placeholder="Último nome" required aria-required="true">
+                </div>
+              </div>
+
+              <div class="c-form__group">
+                <label for="c-email">E-mail</label>
+                <input type="email" id="c-email" name="email" placeholder="voce@empresa.com" required
+                  aria-required="true">
+              </div>
+
+              <div class="c-form__group">
+                <label for="c-phone">Número de telefone</label>
+                <div class="c-form__phone">
+                  <select id="c-phone-prefix" name="prefix" aria-label="Prefixo">
+                    <option value="PT">PT</option>
+                    <option value="US">US</option>
+                    <option value="UK">UK</option>
+                  </select>
+                  <input type="tel" id="c-phone" name="phone" placeholder="+351 900 000 000">
+                </div>
+              </div>
+
+              <div class="c-form__group">
+                <label for="c-message">Mensagem</label>
+                <textarea id="c-message" name="message" rows="4" placeholder="Deixe-nos uma mensagem..." required
+                  aria-required="true"></textarea>
+              </div>
+
+              <div class="c-form__group">
+                <label>Assunto / Interesse</label>
+                <div class="c-form__checkboxes">
+                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="investigacao"><span
+                      class="c-chk-mark"></span><span class="c-chk-label">Projetos de Investigação</span></label>
+                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="ensino"><span
+                      class="c-chk-mark"></span><span class="c-chk-label">Ensino e Formação</span></label>
+                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="parcerias"><span
+                      class="c-chk-mark"></span><span class="c-chk-label">Parcerias Institucionais</span></label>
+                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="esaude"><span
+                      class="c-chk-mark"></span><span class="c-chk-label">Telemedicina & e-Saúde</span></label>
+                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="info"><span
+                      class="c-chk-mark"></span><span class="c-chk-label">Informações Gerais</span></label>
+                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="outro"><span
+                      class="c-chk-mark"></span><span class="c-chk-label">Outro</span></label>
+                </div>
+              </div>
+
+              <button type="submit" class="c-btn-submit" id="contact-submit">Enviar mensagem</button>
+            </form>
+
+            <div class="contact-form__success" id="contact-success" role="alert" aria-live="polite" hidden>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <h3>Mensagem Enviada!</h3>
+              <p>Obrigado! A sua mensagem foi enviada com sucesso e a nossa equipa entrará em contacto muito brevemente.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-info-col" data-animate="fade-left">
+
+            <div class="c-info-block">
+              <h4 class="c-info-block__title">Fale connosco</h4>
+              <p class="c-info-block__desc">A nossa equipa está disponível para ajudar.</p>
+              <div class="c-info-block__links">
+                <a href="mailto:caca@uac.pt" class="c-info-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>caca@uac.pt</span>
+                </a>
+                <a href="#twitter" class="c-info-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                  <span>Mensagem no X (Twitter)</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="c-info-block">
+              <h4 class="c-info-block__title">Ligue-nos</h4>
+              <p class="c-info-block__desc">Atendimento presencial/telefónico: Seg-Sex 9h-18h.</p>
+              <div class="c-info-block__links">
+                <a href="tel:+351296144211" class="c-info-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>+351 296 144 211</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="c-info-block">
+              <h4 class="c-info-block__title">Visite-nos</h4>
+              <p class="c-info-block__desc">Conheça as nossas instalações no campus.</p>
+              <div class="c-info-block__links">
+                <div class="c-info-link c-info-link--text">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Rua da Mãe de Deus, 9500-321<br>Ponta Delgada, Ilha de São Miguel<br>Açores, Portugal</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="img/logos/CACA_full.png" alt="Logótipo CACA" class="footer__logo" loading="lazy">
+          <p class="footer__about">Investigação, Ensino e Inovação ao serviço da saúde açoriana.</p>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Navegação</h4>
+          <a href="#missao">Missão</a>
+          <a href="#investigacao">Investigação</a>
+          <a href="#parceiros">Parceiros</a>
+          <a href="#oportunidades">Oportunidades</a>
+          <a href="#contactos">Contactos</a>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Legal</h4>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Acessibilidade</a>
+          <a href="#">Termos e Condições</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Centro Académico Clínico dos Açores</p>
+        <p>Universidade dos Açores — Licenciatura em Informática | Projeto TE2 | 2025/2026</p>
       </div>
     </div>
-  </div>
-</footer>
-  <script src="hero-transition.js"></script>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Voltar ao topo da página" title="Voltar ao topo" hidden>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/forms.js" defer></script>
+  <script src="js/events.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/chart.js" defer></script>
+  <script src="js/enhancements.js" defer></script>
 </body>
+
 </html>

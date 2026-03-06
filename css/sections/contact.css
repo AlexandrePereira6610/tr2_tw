@@ -1,0 +1,258 @@
+.container--contact-new {
+  max-width: 1100px;
+}
+
+.contact-header-new {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-title-new {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--azul-900);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.contact-subtitle-new {
+  font-size: 1.15rem;
+  color: var(--cinza-600);
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.contact-layout-new {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.c-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.c-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.c-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.c-form__group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--azul-900);
+}
+
+.c-form__group input[type="text"],
+.c-form__group input[type="email"],
+.c-form__group input[type="tel"],
+.c-form__group textarea,
+.c-form__phone select {
+  padding: 14px 16px;
+  border: 1px solid var(--cinza-200);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--cinza-800);
+  background: var(--branco);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.c-form__group input:focus,
+.c-form__group textarea:focus,
+.c-form__phone select:focus {
+  outline: none;
+  border-color: var(--azul-500);
+  box-shadow: 0 0 0 4px rgba(30, 86, 208, 0.1);
+}
+
+.c-form__group input::placeholder,
+.c-form__group textarea::placeholder {
+  color: var(--cinza-400);
+}
+
+.c-form__phone {
+  display: flex;
+  gap: 12px;
+}
+
+.c-form__phone select {
+  width: 90px;
+  flex-shrink: 0;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.c-form__phone input {
+  flex: 1;
+}
+
+.c-form__checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.c-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.c-checkbox input {
+  display: none;
+}
+
+.c-chk-mark {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--cinza-200);
+  border-radius: 6px;
+  background: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) ease;
+  flex-shrink: 0;
+}
+
+.c-checkbox:hover .c-chk-mark {
+  border-color: var(--cinza-300);
+}
+
+.c-checkbox input:checked + .c-chk-mark {
+  background: var(--azul-600);
+  border-color: var(--azul-600);
+}
+
+.c-checkbox input:checked + .c-chk-mark::after {
+  content: '';
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+.c-chk-label {
+  font-size: 0.95rem;
+  color: var(--cinza-700);
+  font-weight: 500;
+}
+
+.c-btn-submit {
+  background: var(--azul-600);
+  color: var(--branco);
+  border: none;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.c-btn-submit:hover {
+  background: var(--azul-700);
+  box-shadow: 0 4px 12px rgba(18, 64, 176, 0.25);
+  transform: translateY(-2px);
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 4px;
+}
+
+.c-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.c-info-block__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--azul-900);
+}
+
+.c-info-block__desc {
+  font-size: 0.95rem;
+  color: var(--cinza-500);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.c-info-block__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.c-info-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--azul-800);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.c-info-link svg {
+  color: var(--azul-600);
+  flex-shrink: 0;
+}
+
+.c-info-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.c-info-link--text {
+  cursor: default;
+}
+
+.c-info-link--text:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .contact-layout-new {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .c-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .c-form__checkboxes {
+    grid-template-columns: 1fr;
+  }
+}
