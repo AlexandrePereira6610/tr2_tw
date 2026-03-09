@@ -21,7 +21,7 @@
 
 .footer__about {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   max-width: 320px;
 }
@@ -31,7 +31,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .footer__links a {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 0.9rem;
   transition: all var(--duration-fast) ease;
@@ -60,7 +60,7 @@
 
 .footer__bottom p {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 4px;
 }
 

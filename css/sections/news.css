@@ -53,7 +53,7 @@
   gap: 8px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--cinza-500);
+  color: var(--cinza-600);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -78,17 +78,17 @@
 
 .news__tag--evento {
   background: rgba(30, 86, 208, 0.1);
-  color: var(--azul-600);
+  color: #0c2a7a;
 }
 
 .news__tag--noticia {
   background: rgba(30, 86, 208, 0.1);
-  color: var(--verde-600);
+  color: #14532d;
 }
 
 .news__tag--publicacao {
   background: rgba(156, 39, 176, 0.1);
-  color: #9c27b0;
+  color: #7b1fa2;
 }
 
 .news__title {
@@ -100,7 +100,7 @@
 
 .news__excerpt {
   font-size: 0.85rem;
-  color: var(--cinza-500);
+  color: var(--cinza-600);
   line-height: 1.5;
 }
 
