@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Índice
+##  Índice
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
