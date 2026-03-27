@@ -58,7 +58,8 @@
 .c-form__group input[type="email"],
 .c-form__group input[type="tel"],
 .c-form__group textarea,
-.c-form__phone select {
+.c-form__phone select,
+.c-form__group > select {
   padding: 14px 16px;
   border: 1px solid var(--cinza-200);
   border-radius: var(--radius-md);
@@ -72,7 +73,8 @@
 
 .c-form__group input:focus,
 .c-form__group textarea:focus,
-.c-form__phone select:focus {
+.c-form__phone select:focus,
+.c-form__group > select:focus {
   outline: none;
   border-color: var(--azul-500);
   box-shadow: 0 0 0 4px rgba(30, 86, 208, 0.1);
@@ -89,7 +91,7 @@
 }
 
 .c-form__phone select {
-  width: 90px;
+  width: 115px;
   flex-shrink: 0;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
@@ -97,6 +99,16 @@
   background-position: right 14px center;
   padding-right: 32px;
   cursor: pointer;
+}
+
+.c-form__group > select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 32px;
+  cursor: pointer;
+  width: 100%;
 }
 
 .c-form__phone input {

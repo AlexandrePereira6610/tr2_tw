@@ -1,5 +1,4 @@
-(function () {
-  'use strict';
+
 
   var validationRules = {
     required: function (value) {
@@ -38,6 +37,12 @@
     }
   };
 
+  /**
+   * Exibe uma mensagem de erro para um campo de formulário.
+   * @param {HTMLElement} input - O elemento de entrada (input) com erro.
+   * @param {HTMLElement} errorSpan - O elemento onde a mensagem será mostrada.
+   * @param {string} message - A mensagem de erro a exibir.
+   */
   function showError(input, errorSpan, message) {
     input.classList.add('form-group__input--error');
     input.classList.remove('form-group__input--success');
@@ -45,6 +50,11 @@
     input.setAttribute('aria-invalid', 'true');
   }
 
+  /**
+   * Remove a indicação de erro e marca o campo como válido.
+   * @param {HTMLElement} input - O elemento de entrada (input) válido.
+   * @param {HTMLElement} errorSpan - O elemento de erro correspondente.
+   */
   function showSuccess(input, errorSpan) {
     input.classList.remove('form-group__input--error');
     input.classList.add('form-group__input--success');
@@ -52,12 +62,24 @@
     input.setAttribute('aria-invalid', 'false');
   }
 
+  /**
+   * Limpa a validação de um campo (remove as classes de erro/sucesso).
+   * @param {HTMLElement} input - O elemento de entrada (input) a limpar.
+   * @param {HTMLElement} errorSpan - O elemento de erro correspondente.
+   */
   function clearValidation(input, errorSpan) {
     input.classList.remove('form-group__input--error', 'form-group__input--success');
     errorSpan.textContent = '';
     input.removeAttribute('aria-invalid');
   }
 
+  /**
+   * Valida um campo específico com base numa regra definida.
+   * @param {HTMLElement} input - O elemento de entrada (input) a validar.
+   * @param {HTMLElement} errorSpan - O elemento para mostrar a mensagem de erro.
+   * @param {string} ruleType - O tipo de regra a aplicar ('required', 'email', etc).
+   * @returns {boolean} Verdade se o campo for válido, falso caso contrário.
+   */
   function validateField(input, errorSpan, ruleType) {
     var rule = validationRules[ruleType];
     if (!rule) return true;
@@ -71,6 +93,13 @@
     return result.valid;
   }
 
+  /**
+   * Configura a validação e submissão de um formulário.
+   * @param {Object} config - Configuração do formulário.
+   * @param {string} config.formId - O ID do formulário HTML.
+   * @param {string} config.successId - O ID do elemento a mostrar em caso de sucesso.
+   * @param {Object[]} config.fields - A lista de campos a validar e suas regras.
+   */
   function setupFormValidation(config) {
     var form = document.getElementById(config.formId);
     var successEl = document.getElementById(config.successId);
@@ -135,6 +164,11 @@
     });
   }
 
+  /**
+   * Simula a submissão de um formulário com um estado de carregamento e mensagem de sucesso.
+   * @param {HTMLElement} form - O formulário submetido.
+   * @param {HTMLElement} successEl - O elemento a exibir no sucesso.
+   */
   function simulateSubmission(form, successEl) {
     var submitBtn = form.querySelector('button[type="submit"]');
     var originalContent = submitBtn.innerHTML;
@@ -180,12 +214,44 @@
     formId: 'contact-form',
     successId: 'contact-success',
     fields: [
-      { inputId: 'contact-nome', errorId: 'contact-nome-error', rule: 'required' },
-      { inputId: 'contact-email', errorId: 'contact-email-error', rule: 'email' },
-      { inputId: 'contact-assunto', errorId: 'contact-assunto-error', rule: 'select' },
-      { inputId: 'contact-mensagem', errorId: 'contact-mensagem-error', rule: 'message' }
+      { inputId: 'c-fname', errorId: 'c-fname-error', rule: 'required' },
+      { inputId: 'c-lname', errorId: 'c-lname-error', rule: 'required' },
+      { inputId: 'c-email', errorId: 'c-email-error', rule: 'email' },
+      { inputId: 'c-message', errorId: 'c-message-error', rule: 'message' },
+      { inputId: 'contact-assunto', errorId: 'contact-assunto-error', rule: 'select' }
     ]
   });
+
+  /**
+   * Preenchimento automático da mensagem baseado no assunto selecionado
+   */
+  var assuntoSelect = document.getElementById('contact-assunto');
+  var messageArea = document.getElementById('c-message');
+
+  if (assuntoSelect && messageArea) {
+    var autoFillTexts = {
+      'investigacao': 'Gostaria de obter mais informações sobre os projetos de investigação em curso...',
+      'ensino': 'Estou interessado(a) nas oportunidades de ensino e formação técnica...',
+      'parcerias': 'Gostaríamos de propor uma parceria institucional no âmbito de...',
+      'esaude': 'Procuro saber mais sobre as soluções de telemedicina e e-Saúde disponibilizadas...',
+      'info': 'Gostaria de solicitar informações gerais sobre o Centro Académico Clínico...',
+      'outro': ''
+    };
+
+    assuntoSelect.addEventListener('change', function() {
+      var selected = this.value;
+      if (selected && autoFillTexts[selected] !== undefined) {
+        var currentText = messageArea.value.trim();
+        var isAutoFilled = Object.values(autoFillTexts).some(function(text) { 
+          return text !== '' && currentText === text; 
+        });
+        
+        if (currentText === '' || isAutoFilled) {
+          messageArea.value = autoFillTexts[selected];
+        }
+      }
+    });
+  }
 
   var shakeStyle = document.createElement('style');
   shakeStyle.textContent =
@@ -197,5 +263,3 @@
     '  80% { transform: translateX(4px); }' +
     '}';
   document.head.appendChild(shakeStyle);
-
-})();

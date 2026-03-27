@@ -1,5 +1,4 @@
-(function () {
-  'use strict';
+
 
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -9,6 +8,9 @@
     heroSubtitle.textContent = '';
   }
 
+  /**
+   * Oculta e remove a sobreposição de carregamento (loading overlay) da página.
+   */
   function removeLoadingOverlay() {
     var overlay = document.getElementById('loading-overlay');
     if (!overlay) return;
@@ -19,6 +21,13 @@
     }, 600);
   }
 
+  /**
+   * Anima um elemento numérico de 0 até ao valor alvo.
+   * @param {HTMLElement} el - O elemento HTML onde o número será exibido.
+   * @param {number} target - O valor numérico final a alcançar.
+   * @param {string} suffix - O sufixo a adicionar ao número (ex: '+', '%').
+   * @param {number} duration - A duração da animação em milissegundos.
+   */
   function animateCounter(el, target, suffix, duration) {
     var startTime = null;
 
@@ -38,6 +47,9 @@
     requestAnimationFrame(step);
   }
 
+  /**
+   * Inicializa e observa os contadores na página para animá-los ao aparecerem na vista.
+   */
   function initCounters() {
     var counters = document.querySelectorAll('.stats__number');
     if (counters.length === 0) return;
@@ -78,6 +90,9 @@
     }
   }
 
+  /**
+   * Inicia o efeito de digitação automática no subtítulo da secção principal (hero).
+   */
   function startTypingEffect() {
     if (prefersReducedMotion || !heroSubtitle || !subtitleText) return;
 
@@ -98,6 +113,9 @@
     }, 45);
   }
 
+  /**
+   * Inicializa os melhoramentos da interface do utilizador.
+   */
   function init() {
     setTimeout(removeLoadingOverlay, 400);
     setTimeout(startTypingEffect, 1000);
@@ -109,5 +127,3 @@
   } else {
     window.addEventListener('load', init);
   }
-
-})();

@@ -1,6 +1,10 @@
-(function () {
-  'use strict';
 
+
+  /**
+   * Inicializa um fallback (alternativa) de revelação ao rolar
+   * para browsers ou situações em que as bibliotecas GSAP num formato avançado
+   * não possam ser carregadas.
+   */
   function initScrollRevealFallback() {
     var animElements = document.querySelectorAll('[data-animate]');
     if (animElements.length === 0) return;
@@ -31,6 +35,12 @@
     });
   }
 
+  /**
+   * Anima um conjunto de elementos de um estado inicial para um estado final.
+   * @param {string|NodeList|HTMLElement[]} targets - Seletor CSS ou coleção de elementos a animar.
+   * @param {Object} fromVars - Propriedades iniciais da animação GSAP.
+   * @param {Object} toVars - Propriedades finais da animação GSAP.
+   */
   function animateElements(targets, fromVars, toVars) {
     var elements = typeof targets === 'string'
       ? document.querySelectorAll(targets)
@@ -41,6 +51,9 @@
     gsap.fromTo(elements, fromVars, toVars);
   }
 
+  /**
+   * Inicializa todas as animações baseadas no GSAP e ScrollTrigger.
+   */
   function initGSAPAnimations() {
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -269,5 +282,3 @@
   } else {
     window.addEventListener('load', initGSAPAnimations);
   }
-
-})();
