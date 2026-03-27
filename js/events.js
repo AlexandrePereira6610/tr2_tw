@@ -1,8 +1,10 @@
-(function () {
-  'use strict';
+
 
   var header = document.getElementById('header');
 
+  /**
+   * Trata o evento de deslocamento (scroll) para alterar o aspeto do cabeçalho.
+   */
   function handleHeaderScroll() {
     if (!header) return;
 
@@ -59,6 +61,9 @@
 
   var scrollTopBtn = document.getElementById('scroll-top-btn');
 
+  /**
+   * Monitoriza o deslocamento da página para mostrar ou esconder o botão "Voltar ao topo".
+   */
   function handleScrollTopVisibility() {
     if (!scrollTopBtn) return;
 
@@ -174,6 +179,11 @@
     '}';
   document.head.appendChild(rippleStyle);
 
+  /**
+   * Exibe uma notificação do tipo "toast" no ecrã.
+   * @param {string} message - A mensagem a apresentar.
+   * @param {string} [type='info'] - O tipo de notificação (ex: 'info', 'success', 'error').
+   */
   function showNotification(message, type) {
     type = type || 'info';
 
@@ -208,6 +218,9 @@
     }, 3000);
   }
 
+  /**
+   * Anima os elementos de entrada na secção principal (hero).
+   */
   function animateHeroEntrance() {
     var title = document.getElementById('hero-title');
     var subtitle = document.getElementById('hero-subtitle');
@@ -291,6 +304,10 @@
   var currentTestimonial = 0;
   var testimonialTimer = null;
 
+  /**
+   * Exibe o testemunho selecionado com base no índice.
+   * @param {number} index - O índice do testemunho a exibir.
+   */
   function showTestimonial(index) {
     testimonialItems.forEach(function (item, i) {
       item.classList.toggle('testimonials__item--active', i === index);
@@ -311,12 +328,18 @@
       });
     });
 
+    /**
+     * Inicia a passagem automática de testemunhos a cada 6 segundos.
+     */
     function startTestimonialTimer() {
       testimonialTimer = setInterval(function () {
         showTestimonial((currentTestimonial + 1) % testimonialItems.length);
       }, 6000);
     }
 
+    /**
+     * Reinicia o temporizador automático de testemunhos.
+     */
     function restartTestimonialTimer() {
       if (testimonialTimer) clearInterval(testimonialTimer);
       startTestimonialTimer();
@@ -335,5 +358,3 @@
       }
     });
   });
-
-})();

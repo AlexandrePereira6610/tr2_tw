@@ -1,5 +1,4 @@
-(function () {
-  'use strict';
+
 
   var data = [
     { area: 'e-Saúde', projetos: 12, cor: '#2ecc71' },
@@ -10,6 +9,9 @@
     { area: 'Genómica', projetos: 4, cor: '#b0c8fb' }
   ];
 
+  /**
+   * Cria o gráfico de barras dos projetos de investigação usando a biblioteca D3.js.
+   */
   function createChart() {
     if (typeof d3 === 'undefined') {
       console.warn('[CACA] D3.js não está disponível.');
@@ -105,6 +107,9 @@
       .style('font-family', 'Inter, sans-serif')
       .style('opacity', 0);
 
+    /**
+     * Inicia a animação das barras e das etiquetas do gráfico usando D3.js.
+     */
     function animateBars() {
       bars.transition()
         .duration(800)
@@ -169,6 +174,9 @@
       });
   }
 
+  /**
+   * Inicializa o gráfico, aguardando caso o D3.js ainda não tenha carregado totalmente.
+   */
   function init() {
     if (typeof d3 !== 'undefined') {
       createChart();
@@ -196,5 +204,3 @@
       createChart();
     }, 300);
   });
-
-})();

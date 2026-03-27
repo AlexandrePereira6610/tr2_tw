@@ -264,6 +264,23 @@
               </div>
             </div>
           </div>
+          <div class="research__card">
+            <div class="research__icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                <line x1="4" y1="22" x2="4" y2="15"></line>
+              </svg>
+            </div>
+            <div class="research__content">
+              <h3 class="research__card-title">Ensino e Informática</h3>
+              <p class="research__card-text">Integração do ensino médico contínuo com práticas inovadoras de informática
+                e desenvolvimento.</p>
+              <div class="research__metrics">
+                <span><strong>4</strong> Projetos</span>
+                <span><strong>10</strong> Inv.</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="chart-wrapper" data-animate="fade-up">
@@ -347,6 +364,28 @@
               <span class="team__area">Epidemiologia</span>
             </div>
           </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_maria.png" alt="Dr.ª Inês Soares" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Dr.ª Inês Soares</h3>
+              <p class="team__role">Investigadora Associada</p>
+              <p class="team__bio">Foco em metodologias de análise de dados aplicadas à telemedicina.</p>
+              <span class="team__area">Análise de Dados</span>
+            </div>
+          </div>
+          <div class="team__card">
+            <div class="team__image-wrapper">
+              <img src="img/team/team_joao.png" alt="Dr. Ricardo Silva" class="team__image" loading="lazy">
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">Dr. Ricardo Silva</h3>
+              <p class="team__role">Especialista em e-Saúde</p>
+              <p class="team__bio">Mais de 10 anos de experiência a implementar projetos de e-Saúde.</p>
+              <span class="team__area">Gestão de Projetos</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -371,6 +410,11 @@
             <img src="img/logos/HDES.png" alt="Hospital do Divino Espírito Santo — Hospital de referência"
               class="partners__logo" loading="lazy">
             <span class="partners__name">HDES</span>
+          </div>
+          <div class="partners__item">
+            <img src="img/logos/CACA_full.png" alt="Fundação para a Ciência e a Tecnologia" class="partners__logo"
+              loading="lazy">
+            <span class="partners__name">FCT</span>
           </div>
         </div>
       </div>
@@ -568,6 +612,28 @@
               </div>
             </div>
           </article>
+          <article class="news__card">
+            <div class="news__image-wrapper">
+              <img src="img/news/newsletter_team.png" alt="Reunião Anual" class="news__image" loading="lazy">
+            </div>
+            <div class="news__content-wrapper">
+              <div class="news__date">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <span>5 de Janeiro, 2026</span>
+              </div>
+              <div class="news__content">
+                <span class="news__tag news__tag--noticia">Notícia</span>
+                <h3 class="news__title">Reunião Anual do CACA debate metas para 2026</h3>
+                <p class="news__excerpt">A direção apresentou o plano estratégico focando no alargamento das parcerias e
+                  novos projetos.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -707,10 +773,12 @@
                   <label for="c-fname">Primeiro nome</label>
                   <input type="text" id="c-fname" name="fname" placeholder="Primeiro nome" required
                     aria-required="true">
+                  <span class="form-group__error" id="c-fname-error" role="alert" aria-live="polite"></span>
                 </div>
                 <div class="c-form__group">
                   <label for="c-lname">Último nome</label>
                   <input type="text" id="c-lname" name="lname" placeholder="Último nome" required aria-required="true">
+                  <span class="form-group__error" id="c-lname-error" role="alert" aria-live="polite"></span>
                 </div>
               </div>
 
@@ -718,17 +786,18 @@
                 <label for="c-email">E-mail</label>
                 <input type="email" id="c-email" name="email" placeholder="voce@empresa.com" required
                   aria-required="true">
+                <span class="form-group__error" id="c-email-error" role="alert" aria-live="polite"></span>
               </div>
 
               <div class="c-form__group">
                 <label for="c-phone">Número de telefone</label>
                 <div class="c-form__phone">
                   <select id="c-phone-prefix" name="prefix" aria-label="Prefixo">
-                    <option value="PT">PT</option>
-                    <option value="US">US</option>
-                    <option value="UK">UK</option>
+                    <option value="+351">🇵🇹 +351</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
                   </select>
-                  <input type="tel" id="c-phone" name="phone" placeholder="+351 900 000 000">
+                  <input type="tel" id="c-phone" name="phone" placeholder="900 000 000">
                 </div>
               </div>
 
@@ -736,24 +805,21 @@
                 <label for="c-message">Mensagem</label>
                 <textarea id="c-message" name="message" rows="4" placeholder="Deixe-nos uma mensagem..." required
                   aria-required="true"></textarea>
+                <span class="form-group__error" id="c-message-error" role="alert" aria-live="polite"></span>
               </div>
 
               <div class="c-form__group">
-                <label>Assunto / Interesse</label>
-                <div class="c-form__checkboxes">
-                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="investigacao"><span
-                      class="c-chk-mark"></span><span class="c-chk-label">Projetos de Investigação</span></label>
-                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="ensino"><span
-                      class="c-chk-mark"></span><span class="c-chk-label">Ensino e Formação</span></label>
-                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="parcerias"><span
-                      class="c-chk-mark"></span><span class="c-chk-label">Parcerias Institucionais</span></label>
-                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="esaude"><span
-                      class="c-chk-mark"></span><span class="c-chk-label">Telemedicina & e-Saúde</span></label>
-                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="info"><span
-                      class="c-chk-mark"></span><span class="c-chk-label">Informações Gerais</span></label>
-                  <label class="c-checkbox"><input type="checkbox" name="assunto" value="outro"><span
-                      class="c-chk-mark"></span><span class="c-chk-label">Outro</span></label>
-                </div>
+                <label for="contact-assunto">Assunto / Interesse</label>
+                <select id="contact-assunto" name="assunto" required aria-required="true">
+                  <option value="" disabled selected>Selecione um motivo...</option>
+                  <option value="investigacao">Projetos de Investigação</option>
+                  <option value="ensino">Ensino e Formação</option>
+                  <option value="parcerias">Parcerias Institucionais</option>
+                  <option value="esaude">Telemedicina & e-Saúde</option>
+                  <option value="info">Informações Gerais</option>
+                  <option value="outro">Outro</option>
+                </select>
+                <span class="form-group__error" id="contact-assunto-error" role="alert" aria-live="polite"></span>
               </div>
 
               <button type="submit" class="c-btn-submit" id="contact-submit">Enviar mensagem</button>
@@ -868,11 +934,11 @@
     </svg>
   </button>
 
-  <script src="js/forms.js" defer></script>
-  <script src="js/events.js" defer></script>
-  <script src="js/animations.js" defer></script>
-  <script src="js/chart.js" defer></script>
-  <script src="js/enhancements.js" defer></script>
+  <script type="module" src="js/forms.js" defer></script>
+  <script type="module" src="js/events.js" defer></script>
+  <script type="module" src="js/animations.js" defer></script>
+  <script type="module" src="js/chart.js" defer></script>
+  <script type="module" src="js/enhancements.js" defer></script>
 </body>
 
 </html>
